@@ -15,8 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@bg-hoard/shared-components": ["libs/shared-components/src/index.ts"],
-      "@bg-hoard/assets": ["libs/assets/src/index.ts"]
+      "@bg-hoard/assets": ["libs/assets/src/index.ts"],
+      "@bg-hoard/shared-components": ["libs/shared-components/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

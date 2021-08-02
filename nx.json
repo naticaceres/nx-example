@@ -19,18 +19,26 @@
     }
   },
   "projects": {
+    "assets": {
+      "tags": []
+    },
+    "shared-components": {
+      "tags": []
+    },
     "store": {
       "tags": []
     },
     "store-e2e": {
       "tags": [],
       "implicitDependencies": ["store"]
-    },
-    "shared-components": {
-      "tags": []
-    },
-    "assets": {
-      "tags": []
     }
+  },
+  "targetDependencies": {
+    "build": [
+      {
+        "target": "build",
+        "projects": "dependencies"
+      }
+    ]
   }
 }

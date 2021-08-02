@@ -21,6 +21,56 @@
     }
   },
   "projects": {
+    "assets": {
+      "projectType": "library",
+      "root": "libs/assets",
+      "sourceRoot": "libs/assets/src",
+      "prefix": "bg-hoard",
+      "targets": {
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/assets"],
+          "options": {
+            "jestConfig": "libs/assets/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/assets/src/**/*.ts",
+              "libs/assets/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "shared-components": {
+      "projectType": "library",
+      "root": "libs/shared-components",
+      "sourceRoot": "libs/shared-components/src",
+      "prefix": "bg-hoard",
+      "targets": {
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared-components"],
+          "options": {
+            "jestConfig": "libs/shared-components/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared-components/src/**/*.ts",
+              "libs/shared-components/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "store": {
       "projectType": "application",
       "root": "apps/store",
@@ -29,9 +79,7 @@
       "targets": {
         "build": {
           "executor": "@angular-devkit/build-angular:browser",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/store",
             "index": "apps/store/src/index.html",
@@ -39,13 +87,8 @@
             "polyfills": "apps/store/src/polyfills.ts",
             "tsConfig": "apps/store/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "apps/store/src/favicon.ico",
-              "apps/store/src/assets"
-            ],
-            "styles": [
-              "apps/store/src/styles.scss"
-            ],
+            "assets": ["apps/store/src/favicon.ico", "apps/store/src/assets"],
+            "styles": ["apps/store/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -110,9 +153,7 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/store"
-          ],
+          "outputs": ["coverage/apps/store"],
           "options": {
             "jestConfig": "apps/store/jest.config.js",
             "passWithNoTests": true
@@ -141,63 +182,7 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/store-e2e/**/*.{js,ts}"
-            ]
-          }
-        }
-      }
-    },
-    "shared-components": {
-      "projectType": "library",
-      "root": "libs/shared-components",
-      "sourceRoot": "libs/shared-components/src",
-      "prefix": "bg-hoard",
-      "targets": {
-        "test": {
-          "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/shared-components"
-          ],
-          "options": {
-            "jestConfig": "libs/shared-components/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/shared-components/src/**/*.ts",
-              "libs/shared-components/src/**/*.html"
-            ]
-          }
-        }
-      }
-    },
-    "assets": {
-      "projectType": "library",
-      "root": "libs/assets",
-      "sourceRoot": "libs/assets/src",
-      "prefix": "bg-hoard",
-      "targets": {
-        "test": {
-          "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/assets"
-          ],
-          "options": {
-            "jestConfig": "libs/assets/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/assets/src/**/*.ts",
-              "libs/assets/src/**/*.html"
-            ]
+            "lintFilePatterns": ["apps/store-e2e/**/*.{js,ts}"]
           }
         }
       }
